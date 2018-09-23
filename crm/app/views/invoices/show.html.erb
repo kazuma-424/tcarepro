@@ -1,0 +1,43 @@
+  <div class="beige-wrapper">
+  
+            <div class="heading"><h2>新規請求書一覧</h2>
+            <p>New Invoice List</p></div>
+            
+    
+
+<table>
+	<tbody>
+	  <tr>
+	    <th>ステータス</th>
+        <td><%=@invoice.status %></td>
+        <th>期限</th>
+        <td><%= @invoice.deadline %></td>
+      </tr>
+      <tr>
+        <th>入金日</th>
+        <td><%= @invoice.payment %></td>
+        <th>件名</th>
+        <td><%= @invoice.subject %></td>
+      </tr>
+      <tr>
+        <th>商品名</th>
+        <td><%= @invoice.product %></td>
+        <th>販売価格</th>
+        <td>￥<%= @invoice.price %></td>
+　  </tr>
+　  <tr>
+        <th>数量</th>
+        <td><%= @invoice.quantity %>個</td>
+        <th></th>
+        <td></td>
+　  </tr>
+
+	</tbody>    
+</table>    
+
+
+<%= link_to "PDF出力", invoice_path(@invoice, format: "pdf") %>
+
+
+    <%= link_to("テストプリント", report_invoice_path(1), class: "square_btn stump", target: "_blank") %>
+</div>

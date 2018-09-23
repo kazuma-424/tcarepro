@@ -1,0 +1,23 @@
+
+            <div class="heading"><h2>顧客一覧</h2>
+            <p>Customer List  <%= link_to '(New regstration)', '/companies/new' %></p></div>
+    
+    
+	<%= render 'index'%>
+
+</br>
+</br>
+
+            <div class="heading"><h2>新規インポート</h2>
+            <p>New Imort Registration</p></div>
+
+<table width= "90%">
+    <tbody>
+        <%= form_tag import_companies_path, multipart: true do %>
+        <tr>
+            <th><%= file_field_tag :file %></th>
+            <td><%= submit_tag "インポート" %></td>
+        </tr>
+    </tbody>
+</table>
+<% end %>

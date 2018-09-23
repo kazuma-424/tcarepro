@@ -1,0 +1,37 @@
+  <div class="beige-wrapper">
+  
+              <div class="heading"><h2>労働局詳細</h2>
+            <p>Prefecture detail</p></div>
+
+<table width ="90%">
+	<tbody>
+		<tr>
+			<th colspan = "5" >労働局名</th>
+		</tr>
+		<tr>
+			<td colspan = "5" ><%= @prefecture.labor%></td>
+		</tr>
+		<tr>
+			<th>助成金名</th>
+			<th>提出方法</th>
+			<th>電話番号</th>
+			<th>郵便番号</th>
+			<th>住所</th>
+		</tr>
+		<tr>
+			<td><%= @prefecture.product_type %></td>
+			<td><%= @prefecture.method%></td>
+			<td><%= @prefecture.tel%></td>
+			<td><%= @prefecture.post%></td>
+			<td><%= @prefecture.address%></td>
+		</tr>
+		<tr>
+			<th colspan = "5" >注意点</th>
+		</tr>
+		<tr>
+			<td colspan = "5" ><%= @prefecture.point%></td>
+		</tr>
+	</tbody>
+</table>
+
+</div>

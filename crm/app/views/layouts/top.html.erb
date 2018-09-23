@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang = "ja">
+ <head>
+       <title>勤怠管理システム『SMART』</title>
+              <meta charset="utf-8">
+              <!--　レスポンシブの定義　-->
+               <meta name="viewport" content="width=device-width, initial-scale=1,0">
+    
+               <%= csrf_meta_tags %>
+
+                <%= stylesheet_link_tag    'application', media: 'all'%>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+                 <%= javascript_include_tag 'application' %>
+</head>
+<header>
+    <div class="container">
+      <div class="header-left">
+                <%= link_to '/' do %>
+                    <%= image_tag("rogo.png", :class => "menu_icon")%>
+                <% end %>
+      </div>
+      <div class="header-right">
+        <!-- user/signed_in? はユーザーがログインしているか調べるdeviseのHelperメソッド -->
+            
+           <%= link_to  'ホーム', '/' %>
+            <%= link_to  '会社概要', '/company' %> 
+            <%= link_to  '問い合わせ', '/contact' %>
+           <%= link_to  '新規登録', '/users/sign_up'  %>
+           <%= link_to  'ログイン' ,'/users/sign_in'%>
+           
+      </div>
+    </div>
+
+</header>
+
+<body>
+<main>
+    <%= yield %>
+</main>
+</body>
+</html>

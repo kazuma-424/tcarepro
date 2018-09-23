@@ -1,0 +1,31 @@
+  <div class="beige-wrapper">
+  
+            <div class="heading"><h2>FAQ一覧</h2>
+            <p>Faq List     <%= link_to '(New regstration)', '/faqs/new' %></p></div>
+
+
+    <table width="90%">
+     <tbody>
+      <tr>
+        <th>タイトル</th>
+        <th>コンテンツ</th>
+        <th>編集/削除</th>
+　  </tr>
+      <tr>
+      <% @faqs.each do |faq|%>
+        <td><%= link_to faq.title, faq_path(faq)  %></td>
+        <td><%= faq.contents  %></td>
+        <td><%= link_to '編集', edit_faq_path(faq), class: 'command'%>
+			            ｜ <%= link_to '削除', 
+			            	faq_path(faq), 
+			            	method: :delete, 
+			            	class: 'command',
+			            	data: { confirm: '本当に削除しますか？'} %></td>
+
+      </tr>
+      <% end %>
+      </tbody>
+    </table> 
+
+
+ </div>
