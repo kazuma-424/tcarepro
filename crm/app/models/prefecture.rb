@@ -16,6 +16,7 @@
 #
 
 class Prefecture < ApplicationRecord
+    has_many :details
 
 
 SELECT_OPTIONS = [

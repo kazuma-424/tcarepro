@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180921075626) do
+ActiveRecord::Schema.define(version: 20180928064134) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -113,6 +113,20 @@ ActiveRecord::Schema.define(version: 20180921075626) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "details", force: :cascade do |t|
+    t.string "name"
+    t.string "product_type"
+    t.string "method"
+    t.integer "tel"
+    t.string "post"
+    t.string "address"
+    t.string "point"
+    t.integer "prefecture_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["prefecture_id"], name: "index_details_on_prefecture_id"
+  end
+
   create_table "documents", force: :cascade do |t|
     t.string "upload_file_name"
     t.binary "upload_file"
@@ -129,14 +143,25 @@ ActiveRecord::Schema.define(version: 20180921075626) do
   end
 
   create_table "invoices", force: :cascade do |t|
-    t.string "company"
     t.string "status"
     t.string "deadline"
     t.string "payment"
     t.string "subject"
-    t.string "product"
-    t.string "price"
-    t.string "quantity"
+    t.string "item1"
+    t.string "item2"
+    t.string "item3"
+    t.string "item4"
+    t.string "item5"
+    t.string "price1"
+    t.string "price2"
+    t.string "price3"
+    t.string "price4"
+    t.string "price5"
+    t.string "quantity1"
+    t.string "quantity2"
+    t.string "quantity3"
+    t.string "quantity4"
+    t.string "quantity5"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

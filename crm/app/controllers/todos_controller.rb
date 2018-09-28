@@ -3,13 +3,11 @@ class TodosController < ApplicationController
 
   def index
   	 @todos = Todo.all.order(created_at: 'desc')
-  	 @q = Company.ransack(params[:q])
   	     @todo = Todo.new
   end
   
   def show
   	@todo = Todo.find(params[:id])
-  	@q = Company.ransack(params[:q])
   end
   
  
@@ -25,7 +23,6 @@ class TodosController < ApplicationController
   
   def edit
     @todo = Todo.find(params[:id])
-    @q = Company.ransack(params[:q])
   end
 
  def update

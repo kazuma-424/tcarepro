@@ -19,22 +19,15 @@
             <%= link_to '/companies' do %>
                 <%= image_tag("rogo.png", :class => "menu_icon")%>
             <% end %>
-                               <!-- 検索 -->
-             <div class= "header_search">                  
-            <%= search_form_for @q do |f|  %>
-                <%= f.search_field :company_cont,  type: "text"  %>
-                <%= submit_tag "検索" %>
-            <%end%>
-            </div>
       </div>
       <div class="header-right">
            <%= link_to  '企業一覧', '/companies' %>
            <%= link_to  '請求書' , '/invoices' %>
            <%= link_to  '労働局情報', '/prefectures' %>
-           <%= link_to  'FAQ', '/faqs' %>
            <%= link_to  'ファイル', '/uploader/form' %>
+           <%= link_to  'FAQ', 'https://cp.crold-valieat.jp/', :target=>["_blank"]  %>
            <%= link_to  'メール', 'https://mail.google.com/mail/u/0/#inbox', :target=>["_blank"] %>
-           <%= link_to  'ToDo', 'todos/' %>
+           <%= link_to  'ToDo', '/todos/' %>
            <% if admin_signed_in? %>
 <!-- current_user は現在ログインしているUserオブジェクトを返すdeviseのHelperメソッド -->
 <!-- *_path はUserモデルを作成したときに、deviseにより自動で作成されてますので、rake routesで確認できます -->

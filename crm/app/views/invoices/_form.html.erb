@@ -16,38 +16,49 @@
         <th>入金日</th>
         <td><%= f.date_field :payment %></td>
         <th>件名</th>
-        <td><%= f.select(:subject,[
-               ["コンサルティング成果","コンサルティング成果"],
-               ["コンサルティング初期費用","コンサルティング初期費用"],
-               ["コンサルティング月額費用","コンサルティング月額費用"],
-               ["キャリアコンサルティング費用","キャリアコンサルティング費用"],
-               ["教育訓練休暇等制度実施費用","教育訓練休暇等制度実施費用"],
-                ]) %></td>
+        <td><%= f.text_field :subject %></td>
       </tr>
+	</tbody>
+</table>
+
+<table>
+	<tbody>
       <tr>
         <th>商品名</th>
-        <td><%= f.select(:subject,[
-               ["コンサルティング成果（アップ）","コンサルティング成果（アップ）"],
-               ["コンサルティング成果（セルフ）","コンサルティング成果（セルフ）"],
-               ["コンサルティング成果（教育）","コンサルティング成果（教育）"],
-               ["コンサルティング成果（職業）","コンサルティング成果（職業）"],
-               ["コンサルティング初期費用（有期実習）","コンサルティング初期費用（有期実習）"],
-               ["コンサルティング初期費用（アップ）","コンサルティング初期費用（アップ）"],
-               ["コンサルティング月額費用","コンサルティング月額費用"],
-               ["キャリアコンサルティング費用","キャリアコンサルティング費用"],
-               ["教育訓練休暇等制度実施費用","教育訓練休暇等制度実施費用"],
-                ]) %>
-        </td>
         <th>販売価格</th>
-        <td>￥<%= f.number_field :price %></td>
-　  </tr>
-　  <tr>
         <th>数量</th>
-        <td><%= f.number_field :quantity %>個</td>
-        <th></th>
-        <td></td>
+        <th>合計</th>
+     </tr>
+     <tr>
+        <td><%= f.text_field :item1 %></td>
+        <td><%= f.number_field :price1 %></td>
+　    <td><%= f.number_field :quantity1 %></td>
+        <td>#item+price+quantity1</td>
 　  </tr>
-
+     <tr>
+        <td><%= f.text_field :item2 %></td>
+        <td><%= f.number_field :price2 %></td>
+　    <td><%= f.number_field :quantity2 %></td>
+        <td>#item+price+quantity2</td>
+　  </tr>
+     <tr>
+        <td><%= f.text_field :item3 %></td>
+        <td><%= f.number_field :price3 %></td>
+　    <td><%= f.number_field :quantity3 %></td>
+        <td>#item+price+quantity3</td>
+　  </tr>
+     <tr>
+        <td><%= f.text_field :item4 %></td>
+        <td><%= f.number_field :price4 %></td>
+　    <td><%= f.number_field :quantity4 %></td>
+        <td>#item+price+quantity4</td>
+　  </tr>
+     <tr>
+        <td><%= f.text_field :item5 %></td>
+        <td><%= f.number_field :price5 %></td>
+　    <td><%= f.number_field :quantity5 %></td>
+        <td>#item+price+quantity5</td>
+　  </tr>
 	</tbody>    
 </table>    
 				<%= f.submit '登録', data: { confirm: '登録しますか？'}%>

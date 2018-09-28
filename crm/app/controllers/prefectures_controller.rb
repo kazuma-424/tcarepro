@@ -2,17 +2,14 @@ class PrefecturesController < ApplicationController
 
 	def index
 		@prefectures = Prefecture.all.order(created_at: 'desc')
-		@q = Company.ransack(params[:q])
 	end
 	
 	def show
   		@prefecture = Prefecture.find(params[:id])
-  		@q = Company.ransack(params[:q])
     end
   
     def new
     	@prefecture = Prefecture.new
-    	@q = Company.ransack(params[:q])
     end
 	
 	def create

@@ -2,17 +2,14 @@ class InvoicesController < ApplicationController
 
   def index
   	 @invoices = Invoice.all.order(created_at: 'desc')
-  	 @q = Company.ransack(params[:q])
   end
   
   def show
   	@invoice = Invoice.find(params[:id])
-  	@q = Company.ransack(params[:q])
   end
   
   def new
     @invoice = Invoice.new
-    @q = Company.ransack(params[:q])
   end
  
  def create
@@ -51,7 +48,13 @@ class InvoicesController < ApplicationController
     report = Thinreports::Report.new layout: "app/reports/layouts/invoices.tlf"
     report.start_new_page
     report.page.values(
-    created_at: @invoice.try(:id)
+    created_at: @invoice.try("@invoice.created_at"), 
+    company: @invoice.try("@invoice.company.company"), #@companyのcompany
+    postnumber: @invoice.try("@invoice.company.postnumber"), #@companyのpostnumber
+    address: @invoice.try("@invoice.company.address"), #@companyのaddress
+    first_name: @invoice.try("@invoice.company.first_name"), #@companyのfirst_name
+    last_name: @invoice.try("@invoice.company.last_name"), #@companyのlast_name
+    
     )
     send_data(report.generate, filename: "#{@invoice}.pdf", type: "application/pdf")
   end
@@ -65,9 +68,24 @@ class InvoicesController < ApplicationController
         :deadline, #期限
         :payment,#入金日
         :subject, #件名
-        :product, #商品名
-        :price, #販売価格
-        :quantity #数量
+        :item1, #商品名
+        :item2, #商品名
+        :item3, #商品名
+        :item4, #商品名
+        :item5, #商品名
+
+        :price1, #商品名
+        :price2, #商品名
+        :price3, #商品名
+        :price4, #商品名
+        :price5, #商品名
+
+        :quantity1, #数量
+        :quantity2, #数量
+        :quantity3, #数量
+        :quantity4, #数量
+        :quantity5 #数量
+
         )
     end    
 

@@ -54,7 +54,37 @@ class Company < ApplicationRecord
   end
 
   def self.updatable_attributes
-  		["company"]
+      [
+      "company",  #会社名
+      "first_name", #苗字
+      "last_name", #名前
+      "first_kana", #ミョウジ
+      "last_kana", #ナマエ
+      "tel", #電話番号
+      "mobile", #携帯番号
+      "fax", #FAX番号
+      "e_mail", #メールアドレス
+      "postnumber", #郵便番号
+      "prefecture", #都道府県
+      "city", #市町村
+      "town", #市町村以降
+      "caption", #資本金
+      "labor_number", #労働保険番号
+#就業規則
+       "employment_number", #雇用保険番号
+       "trial_period", #試用期間
+       "work_start", #勤務開始
+       "break_in", #休憩開始
+       "break_out", #休憩終了
+       "work_out", #勤務終了
+       "holiday", #休日
+       "allowance", #手当
+       "allowance_contents", #手当詳細
+       "closing_on", #締め日
+       "payment_on", #支払い日
+       "method_payment", #支払方法
+       "desuction" #控除
+  		]
   end
   
 

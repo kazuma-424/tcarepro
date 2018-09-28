@@ -7,26 +7,19 @@
      <tbody>
       <tr>
                <th>労働局</th>
-			   <th>該当助成金</th>
-			   <th>電話番号</th>
-	           <th>郵便番号</th>
-	           <th>住所</th>
+			   <th>最低賃金</th>
                <th>編集/削除</th>
 　  </tr>
       <tr>
       <% @prefectures.each do |prefecture|%>
         <td><%= link_to prefecture.labor, prefecture_path(prefecture) %></td>
         <td><%= prefecture.method%></td>
-        <td><%= prefecture.tel%></td>
-        <td><%= prefecture.post%></td>
-        <td><%= prefecture.address%></td>
         <td><%= link_to '編集', edit_prefecture_path(prefecture), class: 'command'%>
 			            ｜ <%= link_to '削除', 
 			            	prefecture_path(prefecture), 
 			            	method: :delete, 
 			            	class: 'command',
 			            	data: { confirm: '本当に削除しますか？'} %></td>
-
       </tr>
       <% end %>
       </tbody>

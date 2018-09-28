@@ -3,17 +3,14 @@ class FaqsController < ApplicationController
 
   def index
   	 @faqs = Faq.all.order(created_at: 'desc')
-  	 @q = Company.ransack(params[:q])
   end
   
   def show
   	@faq = Faq.find(params[:id])
-  	@q = Company.ransack(params[:q])
   end
   
   def new
     @faq = Faq.new
-    @q = Company.ransack(params[:q])
   end
  
  def create
@@ -28,7 +25,6 @@ class FaqsController < ApplicationController
   
   def edit
     @faq = Faq.find(params[:id])
-    @q = Company.ransack(params[:q])
   end
 
  def update

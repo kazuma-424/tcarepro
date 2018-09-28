@@ -1,2 +1,6 @@
-<h1>Uploader#upload</h1>
-<p>Find me in app/views/uploader/upload.html.erb</p>
+<%= form_tag({ action: :upload_process } , ,multipart: true) do %>
+	<label>ファイルを指定：
+		<%= file_field_tag :file, size: 50 %></label>
+		
+	<%=submit_tag 'アップロード' %>
+	<%end%>

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get 'uploader/index'
   get 'uploader/form'
- post 'uploader/upload'
+ get 'uploader/upload'
   get 'uploader/download'
 
                                         #ログイン切り替え
@@ -36,7 +36,9 @@ Rails.application.routes.draw do
  end
 
                                             #都道府県
-    resources :prefectures
+    resources :prefectures do
+        resources :details 
+    end
                                                 #請求書
     resources :invoices do
       member do

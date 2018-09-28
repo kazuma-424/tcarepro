@@ -34,6 +34,7 @@ before_action :authenticate_admin!, except: [:progress]
 
   def edit
     @company = Company.find(params[:id])
+  	@q = Company.ransack(params[:q])
   end
 
  def update
@@ -60,6 +61,11 @@ before_action :authenticate_admin!, except: [:progress]
     redirect_to companies_url, notice: "CSVデータを追加しました"
 end
 
+  def plural_destroy
+    items = params[:checked_items].keys
+    Company.destroy(items)
+    redirect_to :action => 'list'
+  end
 
   private
     def company_params
