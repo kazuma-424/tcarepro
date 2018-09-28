@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get 'uploader/index'
   get 'uploader/form'
- get 'uploader/upload'
+post 'uploader/upload'
   get 'uploader/download'
 
                                         #ログイン切り替え
